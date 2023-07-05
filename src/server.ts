@@ -19,7 +19,7 @@ class Server {
 
     async config(){
         //connection mongodb atlas
-        const mongodb_atlas ='mongodb://vekjs:p131471483@cluster0-shard-00-00.yzzb4.mongodb.net:27017,cluster0-shard-00-01.yzzb4.mongodb.net:27017,cluster0-shard-00-02.yzzb4.mongodb.net:27017/db_notes?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
+        const mongodb_atlas = process.env.URL_DATABASE;
         mongoose
             .connect(mongodb_atlas || process.env.MONGODB_URL)
             .then((db) => console.log("Connected to database"))
